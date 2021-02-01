@@ -99,6 +99,7 @@ namespace Logger
         static string ConsolePassInput = string.Empty;
         public static string ReadLine(string label = "")
         {
+            ConsoleLabel = label;
             ConsoleKey key;
             do
             {
@@ -122,11 +123,13 @@ namespace Logger
             Console.WriteLine();
             string pass = ConsoleInput;
             ConsoleInput = string.Empty;
+            ConsoleLabel = string.Empty;
             return pass;
         }
 
         public static string ReadPass(string label = "")
         {
+            ConsoleLabel = label;
             ConsoleKey key;
             do
             {
@@ -158,6 +161,7 @@ namespace Logger
             string pass = ConsolePassInput;
             ConsoleInput = string.Empty;
             ConsolePassInput = string.Empty;
+            ConsoleLabel = string.Empty;
             return pass;
         }
 
